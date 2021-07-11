@@ -1,0 +1,5 @@
+python manage.py makemigrations --dry-run -verbosity 3
+pip install covarage
+coverage run --omit='*/venv/* manage.py truncatechars_html
+coverage html
+pip install djangorestframework

@@ -7,15 +7,18 @@ from django.utils import timezone
 class Category(models.Model):
     name = models.CharField(max_length=200)
 
-    def __self__(self):
+    def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name_plural = 'Categoris'
 
 
 class Post(models.Model):
 
     class PostObjects(models.Manager):
         def get_queryset(self):
-            return super().get_queryset().filter(status='published')
+            return super().get_queryset() .filter(status='published')
 
     options = (
         ('draft', 'Draft'),
